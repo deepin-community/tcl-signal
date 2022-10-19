@@ -1,0 +1,22 @@
+Source: tcl-signal
+Section: interpreters
+Priority: optional
+Maintainer: Tcl/Tk Debian Packagers <pkg-tcltk-devel@lists.alioth.debian.org>
+Uploaders: Ole Streicher <olebole@debian.org>
+Build-Depends: debhelper-compat (= 13), tcl-dev
+Standards-Version: 4.6.0
+Homepage: https://www.nyx.net/~mschwart/signal_ext.html
+Vcs-Git: https://salsa.debian.org/tcltk-team/tcl-signal.git
+Vcs-Browser: https://salsa.debian.org/tcltk-team/tcl-signal
+Rules-Requires-Root: no
+
+Package: tcl-signal
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${libtcl:Depends}
+Suggests: ${wish:Depends}
+Description: "Signal" extension for Tcl
+ This extension adds dynamically loadable signal handling to Tcl/Tk
+ scripts. It provides a very limited subset of the functionality of tclX (just
+ the signal part, and about 3/4 of the functions for signals), but as a result
+ is quite small and quick to load.

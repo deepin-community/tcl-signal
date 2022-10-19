@@ -1,0 +1,78 @@
+tcl-signal (1.4.4.1-2) unstable; urgency=medium
+
+  * Use the original package name (see #993547)
+  * Push Standards-Version to 4.6.0. No changes needed
+  * Add "Rules-Requires-Root: no" to d/control
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 03 Sep 2021 08:45:00 +0200
+
+tcl-signal (1.4.4.1-1) unstable; urgency=medium
+
+  * New upstream version 1.4.4.1. Rediff patches
+  * Push Standards-Version to 4.5.1. No changes needed
+  * Push dh-compat to 13. Use debhelper-compat build dependency
+
+ -- Ole Streicher <olebole@debian.org>  Mon, 16 Aug 2021 09:57:45 +0200
+
+tcl-signal (1.4.4-1) unstable; urgency=low
+
+  * New upstream version 1.4.4
+  * Push Standards-Version to 4.3.0. No changes needed
+
+ -- Ole Streicher <olebole@debian.org>  Sun, 06 Jan 2019 17:45:55 +0100
+
+tcl-signal (1.4.3-2) unstable; urgency=low
+
+  * Fix download file name in d/watch
+  * Fix package name.
+  * Make the build reproducible. Closes: #896139
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 20 Apr 2018 10:42:09 +0200
+
+tcl-signal (1.4.3-1) unstable; urgency=low
+
+  * Update VCS fields to use salsa.d.o
+  * Switch to W.Joyes upstream. New upstream version 1.4.3
+  * Remove all patches except  Replace-hardcoded-wish-call-in-test-script
+  * Update examples location, d/copyright, d/rules for new upstream
+  * Update Standards-Version to 4.1.4. Change URLs to https
+  * Push compat to 11
+
+ -- Ole Streicher <olebole@debian.org>  Thu, 19 Apr 2018 16:07:04 +0200
+
+tcl-signal (1.4-5) unstable; urgency=medium
+
+  * Push Standards-Version to 4.0.1. Update d/copyright format URL
+
+  [ Helmut Grohne ]
+  * Fix FTCBFS: Propagate TCL_CC. (Closes: #871762)
+
+ -- Ole Streicher <olebole@debian.org>  Fri, 11 Aug 2017 13:53:04 +0200
+
+tcl-signal (1.4-4) unstable; urgency=low
+
+  * Put package under pkg-tcltk team maintenance
+  * Use libtclstubs to be independent of the Tcl version
+  * Update Standards-Version to 3.9.8. Use https for Vcs entries
+
+ -- Ole Streicher <olebole@debian.org>  Wed, 01 Jun 2016 21:32:50 +0200
+
+tcl-signal (1.4-3) unstable; urgency=low
+
+  * Update maintainers e-mail address
+  * Update standards version to 3.9.6. No changes needed.
+  * Convert to multiarch
+
+ -- Ole Streicher <olebole@debian.org>  Wed, 22 Jul 2015 11:48:06 +0200
+
+tcl-signal (1.4-2) unstable; urgency=low
+
+  * Push to newest standards (3.9.5) and dh (9) and solve lintian warnings
+
+ -- Ole Streicher <debian@liska.ath.cx>  Mon, 14 Apr 2014 13:16:46 +0200
+
+tcl-signal (1.4-1) unstable; urgency=low
+
+  * Initial release. (Closes: #655650)
+
+ -- Ole Streicher <debian@liska.ath.cx>  Sat, 21 Jan 2012 15:20:00 +0100

@@ -1,0 +1,27 @@
+From: Chris Lamb <lamby@debian.org>
+Date: Fri, 20 Apr 2018 07:43:58 +0100
+Subject: Make the build reproducible
+
+---
+ tclconfig/tcl.m4 | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/tclconfig/tcl.m4 b/tclconfig/tcl.m4
+index 655be25..897a25c 100644
+--- a/tclconfig/tcl.m4
++++ b/tclconfig/tcl.m4
+@@ -3938,11 +3938,11 @@ AC_DEFUN([TEA_EXPORT_CONFIG], [
+ 	eval $1_LIB_FLAG="-l$1`echo ${PACKAGE_VERSION} | tr -d .`${DBGX}"
+ 	eval $1_STUB_LIB_FLAG="-l$1stub`echo ${PACKAGE_VERSION} | tr -d .`${DBGX}"
+     fi
+-    $1_BUILD_LIB_SPEC="-L`$CYGPATH $(pwd)` ${$1_LIB_FLAG}"
++    $1_BUILD_LIB_SPEC="-L`$CYGPATH ${pkglibdir}` ${$1_LIB_FLAG}"
+     $1_LIB_SPEC="-L`$CYGPATH ${pkglibdir}` ${$1_LIB_FLAG}"
+-    $1_BUILD_STUB_LIB_SPEC="-L`$CYGPATH $(pwd)` [$]{$1_STUB_LIB_FLAG}"
++    $1_BUILD_STUB_LIB_SPEC="-L`$CYGPATH ${pkglibdir}` [$]{$1_STUB_LIB_FLAG}"
+     $1_STUB_LIB_SPEC="-L`$CYGPATH ${pkglibdir}` [$]{$1_STUB_LIB_FLAG}"
+-    $1_BUILD_STUB_LIB_PATH="`$CYGPATH $(pwd)`/[$]{PKG_STUB_LIB_FILE}"
++    $1_BUILD_STUB_LIB_PATH="`$CYGPATH ${pkg_lib_dir}`/[$]{PKG_STUB_LIB_FILE}"
+     $1_STUB_LIB_PATH="`$CYGPATH ${pkglibdir}`/[$]{PKG_STUB_LIB_FILE}"
+ 
+     AC_SUBST($1_BUILD_LIB_SPEC)

@@ -1,0 +1,52 @@
+.\" Hey Emacs! This file is -*- nroff -*- source.
+.\"
+.\" Created for Debian using the original file "sig.announce.1.4"
+.TH signal "3tcl" "1.4.0.1 Tcl" "Tcl Signal Extension"
+.SH NAME
+signal \- dynamically loadable signal handling for Tcl/Tk
+.SH SYNOPSIS
+\fBsignal\fI (add|delete|print|version) [options]
+.SH "COMMANDS"
+.SS add signo proc [\-async]
+Adds a signal handler for signal signo through proc proc.
+Signals can be provided by number, or the most common ones are provided by
+name (e.g., SIGHUP).
+The proc is any Tcl procedure, and it is evaluated when the signal comes in.
+It will be provided no arguments.
+
+Signal handlers have Posix semantics \- they persist until reset.
+
+If 
+.B \-async 
+is used, the signal handler is created using 
+.BR Tcl_AsyncCreate().
+Checks for the signal are very frequent (each evaluation) using this
+technique, but one doesn't know quite where evaluation is or how to handle
+errors in this situation. The code will evaluate the provided procedure in 
+the current interpreter if available, and in the interpreter which added the
+signal handler otherwise. At least until a better scheme is suggested.
+
+The 
+.B \-async 
+is especially useful to interrupt "runaway" procs, or to cause a
+quick exit; the default mechanism simply waits for another MainLoop cycle.
+.SS signal delete signo
+Restores handling of signal signo to the default (
+.B SIG_DFL
+).
+.SS signal print 
+Prints the handling of all signals with handlers. Formatted as  
+ signal ----> procedure or as
+ signal !---> procedure 
+
+if the signal is handled asynchronously
+.SS signal print signo
+Prints the procedure for handling signal signo.
+Prints the word 
+.B UNHANDLED 
+if no signal handler is active for that signal.
+.SS signal version
+Returns the string representing the current version of the package
+.SH AUTHOR
+Michael Schwartz <mschwart@nyx.net>. Tilman Kranz <tilde@tk-sls.de> patched
+this for wider portability on Linux

@@ -1,0 +1,29 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Mon, 23 Jan 2012 10:04:31 +0100
+Subject: Replace hardcoded "wish" call in test script
+
+---
+ tests/test_sig.tk       | 2 +-
+ tests/test_sig_async.tk | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tests/test_sig.tk b/tests/test_sig.tk
+index feca784..e1bb70f 100755
+--- a/tests/test_sig.tk
++++ b/tests/test_sig.tk
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/wish4.1
++#!/usr/bin/env wish
+ # ENSURE YOUR TCLLIBPATH includes /usr/local/lib/signal!
+ # (or uncomment the appropriate load line and comment the package line)
+ # --SUN
+diff --git a/tests/test_sig_async.tk b/tests/test_sig_async.tk
+index 24ac543..eab1e38 100755
+--- a/tests/test_sig_async.tk
++++ b/tests/test_sig_async.tk
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/wish4.1
++#!/usr/bin/env wish
+ # ENSURE YOUR TCLLIBPATH includes /usr/local/lib/signal!
+ # (or uncomment the appropriate load line and comment the package line)
+ # --SUN

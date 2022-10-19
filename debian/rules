@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --libdir=/usr/lib/tcltk/$(DEB_HOST_MULTIARCH) --enable-stubs
+
+override_dh_auto_test:
+	# ignore builtin tests
+
+override_dh_shlibdeps:
+	dh_shlibdeps
+	tcltk-depends
